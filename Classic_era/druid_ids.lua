@@ -218,8 +218,14 @@ local ConROC_Druid, ids = ...;
 		TranquilityRank3 = 9862,
 		TranquilityRank4 = 9863,
 	}
+	ids.Runes = {
+		Sunfire = 414684,
+		Mangle = 407995,
+		Lacerate = 414644,
+	}
 	ids.Player_Buff = {
 		omenofClarity = 16864,
+		FuryofStormrage = 414800,
 	}
 	ids.Player_Debuff = {
 

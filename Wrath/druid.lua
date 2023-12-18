@@ -130,6 +130,8 @@ local _Rebirth = Resto_Ability.RebirthRank1;
 local _Regrowth = Resto_Ability.RegrowthRank1;
 local _Rejuvenation = Resto_Ability.RejuvenationRank1;
 local _Tranquility = Resto_Ability.TranquilityRank1;
+
+function ConROC:UpdateSpellID()
 --Ranks
 --	if IsSpellKnown(ids.Bal_Ability.ImprovedFaerieFireRank3) then _FaerieFire = ids.Bal_Ability.ImprovedFaerieFireRank3;
 --	elseif IsSpellKnown(ids.Bal_Ability.ImprovedFaerieFireRank2) then _FaerieFire = ids.Bal_Ability.ImprovedFaerieFireRank2;
@@ -444,6 +446,8 @@ ids.optionMaxIds = {
 	Rejuvenation = _Rejuvenation,
 	Tranquility = _Tranquility,
 }
+end
+ConROC:UpdateSpellID()
 
 function ConROC:EnableRotationModule()
 	self.Description = 'Druid';
@@ -457,19 +461,11 @@ function ConROC:EnableRotationModule()
 end
 function ConROC:PLAYER_TALENT_UPDATE()
 	ConROC:SpecUpdate();
-    if ConROCSpellmenuFrame:IsVisible() then
-        ConROCSpellmenuFrame_CloseButton:Hide();
-        ConROCSpellmenuFrame_Title:Hide();
-        ConROCSpellmenuClass:Hide();
-        ConROCSpellmenuFrame_OpenButton:Show();
-        optionsOpened = false;
-        ConROCSpellmenuFrame:SetSize((90) + 14, (15) + 14)
-    else
-        ConROCSpellmenuFrame:SetSize((90) + 14, (15) + 14)
-    end
+    ConROC:closeSpellmenu();
 end
 
 function ConROC.Druid.Damage(_, timeShift, currentSpell, gcd)
+    ConROC:UpdateSpellID()
 --Character
 	local plvl 												= UnitLevel('player');
 	local int												= UnitStat("player", 4);
