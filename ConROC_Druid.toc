@@ -1,11 +1,11 @@
 ## Title:-|cffFFFFFFConROC|r- |cffFF7D0ADruid|r
 ## Version: 2.0.2
 ## Author: Vae 2.0.2 updated by Lith
-## Interface: 30403
+## Interface: 11500
 ## SavedVariablesPerCharacter: ConROCDruidSpells
 ## Dependencies: ConROC
 ## LoadOnDemand: 1
 
-Wrath\druid_ids.lua
-Wrath\druid_spellmenu.lua
-Wrath\druid.lua
+druid_ids.lua
+druid_spellmenu.lua
+druid.lua
